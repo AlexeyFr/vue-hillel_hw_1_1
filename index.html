@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue-hillel_hw_1_1</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+
+  <style>
+    /*Reset*/
+    html,body,div,span,applet,object,iframe,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,ol,ul,li,fieldset,form,legend,table,tbody,tfoot,thead,tr,th{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+    /*Reset*/
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 1.2;
+      font-size: 14px;
+      background: #fff;
+      color: #fff;
+    }
+    #app {
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .post {
+      width: 640px;
+      margin: 0 auto;
+      background: #2b2b2b;
+      padding: 20px;
+    }
+    .name {
+      font-size: 22px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .info_wrap {
+      display: flex;
+    }
+    .poster {
+      width: 40%;
+      flex-shrink: 0;
+      margin-bottom: 15px;
+    }
+    .info {
+      padding: 10px
+    }
+    .info div,
+    .aplot div {
+      padding: 3px 0;
+    }
+    .link a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .link a:hover{
+      text-decoration: none;
+      color: #0000ff;
+    }
+    .aplot {
+      padding: 10px;
+      background: #363636
+    }
+  </style>
+
+  <div id="app">
+
+    <div class="post">
+      <h1 class="name">{{Title}}</h1>
+      <div class="info_wrap">
+        <img class="poster" :src="Poster" alt="Poster">
+        <div class="info">
+          <div>
+            <div>Год выпуска: {{Year}}</div>
+            <div>Перевод: {{Language}}</div>
+            <div>Продолжительность: {{Runtime}}</div>
+            <div>Премьера: {{Released}}</div>
+            <div>Премьера DVD: {{DVD}}</div>
+            <div>Страна: {{Country}}</div>
+            <div>Производитель: {{Production}}</div>
+            <div>Бюджет: {{BoxOffice}}</div>
+            <div>Оскары: {{Awards}}</div>
+            <div>Рейтинг: {{imdbRating}}</div>
+            <div>Лайки: {{imdbVotes}}</div>
+            <div>Директор: {{Director}}</div>
+            <div>Сценарий: {{Writer}}</div>
+            <div>Актеры: {{Actors}}</div>
+          </div>
+        </div>
+        <div>
+        </div>
+      </div>
+      <div class="aplot">
+        <div>Описание: {{Plot}}</div>
+        <div class="link">Официальный сайт: <a :href="Website" target="_blank">{{Website}}</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        "Title":"The Matrix Reloaded",
+        "Year":"2003",
+        "Rated":"R",
+        "Released":"15 May 2003",
+        "Runtime":"138 min",
+        "Genre":"Action, Sci-Fi",
+        "Director":"Lana Wachowski, Lilly Wachowski",
+        "Writer":"Lilly Wachowski, Lana Wachowski, Lilly Wachowski (characters), Lana Wachowski (characters)",
+        "Actors":"Ray Anthony, Christine Anu, Andy Arness, Alima Ashton-Sheibu",
+        "Plot":"Following the events of The Matrix (1999), Neo and the rebel leaders estimate they have 72 hours until 250,000 probes discover Zion and destroy it and its inhabitants. Neo must decide how he can save Trinity from a dark fate in his dreams.",
+        "Language":"English, French",
+        "Country":"USA",
+        "Awards":"8 wins & 31 nominations.",
+        "Poster":"https://m.media-amazon.com/images/M/MV5BODE0MzZhZTgtYzkwYi00YmI5LThlZWYtOWRmNWE5ODk0NzMxXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+        "Ratings":[{"Source":"Internet Movie Database",
+        "Value":"7.2/10"},{"Source":"Rotten Tomatoes",
+        "Value":"73%"},{"Source":"Metacritic",
+        "Value":"62/100"}],"Metascore":"62",
+        "imdbRating":"7.2",
+        "imdbVotes":"466,165",
+        "imdbID":"tt0234215",
+        "Type":"movie",
+        "DVD":"14 Oct 2003",
+        "BoxOffice":"$281,500,000",
+        "Production":"Warner Bros. Pictures",
+        "Website":"http://whatisthematrix.warnerbros.com/",
+        "Response":"True"
+      }
+    })
+  </script>
+
+</body>
+</html>
